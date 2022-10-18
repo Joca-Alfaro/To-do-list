@@ -4,9 +4,21 @@ const router = express()
 
 //imports
 
-//disponibilidades
+
+const {getTareas} = require("../Controllers/tareas.contoller");
+
 
 
 //routes
+router.get('/', getTareas)
 
-module.exports = router
+
+router.get('/all', getTareas);
+router.put('/update', getTareas);
+router.post('/create', getTareas);
+router.post('/delete', getTareas);
+//disponibilidades
+
+
+
+module.exports = router;

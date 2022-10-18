@@ -4,9 +4,21 @@ const router = express()
 
 //imports
 
-//disponibilidades
+
+const { getUsuarios } = require("../Controllers/usuarios.controller");
+
 
 
 //routes
+router.get('/', getUsuarios)
 
-module.exports = router
+
+router.get('/all', getUsuarios);
+router.put('/update', getUsuarios);
+router.post('/create', getUsuarios);
+router.post('/delete', getUsuarios);
+//disponibilidades
+
+
+
+module.exports = router;
