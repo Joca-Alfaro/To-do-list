@@ -5,18 +5,21 @@ const router = express()
 //imports
 
 
-const {getTareas} = require("../Controllers/tareas.contoller");
+const { CreateTasks, ReadTasks, UpdateTasks, UpdateTareas, DeletTask } = require("../Controllers/tareas.contoller");
 
 
 
 //routes
-router.get('/', getTareas)
+router.get('/', ReadTasks)
 
+router.get('/all', ReadTasks);
+router.post('/create', CreateTasks);
 
-router.get('/all', getTareas);
-router.put('/update', getTareas);
-router.post('/create', getTareas);
-router.post('/delete', getTareas);
+// router.put('/update', UpdateTasks);
+
+router.put('/actualizar', UpdateTareas);
+
+router.put('/delete', DeletTask)
 //disponibilidades
 
 

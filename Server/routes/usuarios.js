@@ -5,18 +5,20 @@ const router = express()
 //imports
 
 
-const { getUsuarios } = require("../Controllers/usuarios.controller");
+const { CreateUser, ReadUser, UpdateUser, DeleteUser } = require("../Controllers/usuarios.controller");
 
 
 
 //routes
-router.get('/', getUsuarios)
+router.get('/', ReadUser)
 
 
-router.get('/all', getUsuarios);
-router.put('/update', getUsuarios);
-router.post('/create', getUsuarios);
-router.post('/delete', getUsuarios);
+router.get('/all', ReadUser);
+
+router.post('/create', CreateUser);
+router.put('/update', UpdateUser);
+
+router.put('/delete', DeleteUser);
 //disponibilidades
 
 
