@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import {
+ BrowserRouter as Router,
+ Routes,
+  Route
+} from "react-router-dom";
+import Navbar from "../src/components/navbar/navbar"
+
+import Filtros_Etiquetas from "../src/components/filtros_etiquetas/filtros_etiquetas"
+import Home from "../src/components/Page_Home/index"
+import Folders from "../src/components/Folders/index"
+import Usuarios from "../src/components/Usuarios/index"
+import Error from "../src/components/Not Found/index"
+import  Favorites from "../src/components/Favorites"
+import Tareas from "../src/components/Tareas"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+ <Router>
+      <Navbar />
+
+  <Routes>
+        <Route path="/" element={< Home />} />
+        <Route path="/FiltrosAndEtiquetas" element={< Filtros_Etiquetas />} />
+        <Route path="/Folders" element={< Folders />} />
+        <Route path="/Usuarios" element={< Usuarios />} />
+        <Route path="/Favorites" element={< Favorites />} />
+        <Route path="/Tareas" element={< Tareas />} />
+
+        <Route path="*" element={< Error />} />
+        <Route path="*" element={<Error />} />
+
+        {/* <Route path="*" element={<Error />} /> */}
+
+  </Routes>
+
+      </Router>
+
+
   );
 }
 

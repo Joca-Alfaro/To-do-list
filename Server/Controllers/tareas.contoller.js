@@ -1,7 +1,5 @@
 const Task = require('../models/task.model')
 
-
-
 const CreateTasks = async (req, res) => {
       const { title, author, description} = req.body
   try {
@@ -13,7 +11,6 @@ const CreateTasks = async (req, res) => {
   }
 }
 
-
 const ReadTasks = async (req, res) => {
   try {
     const ViewTasks = await Task.find({});
@@ -22,7 +19,6 @@ const ReadTasks = async (req, res) => {
     console.log(error)
   }
  }
-
 // const UpdateTasks = async (req, res) => {
 //   const { id, title, author, description } = req.body
 //   try {
@@ -32,7 +28,6 @@ const ReadTasks = async (req, res) => {
 //     console.log(error)
 //  }
 //   }
-
 const UpdateTareas = async (req, res) => {
   try {
     const {id} = req.query;

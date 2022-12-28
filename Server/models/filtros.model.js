@@ -9,17 +9,18 @@ const { Schema } = mongoose;
 // });
 
 
-const Users = new Schema({
-  user: String, // String is shorthand for {type: String}
-  password: String,
+const Filtros = new Schema({
+  title: String, // String is shorthand for {type: String}
+  author: String,
+  name: String,
+  search: String,
   description: String,
-  email: String,
   estado: { type: Boolean, default: true },
-  fecha_creacion: { type: Date, default: Date.now },
-  cargo: { type: String, default: "Usuario" },
+  favorite: { type: Boolean, default: false },
+  date: { type: Date, default: Date.now },
 });
 
 
 
 //disponibilidad
-module.exports = mongoose.model('Usuarios', Users)
+module.exports = mongoose.model('Filter', Filtros)
