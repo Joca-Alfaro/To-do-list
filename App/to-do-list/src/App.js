@@ -34,7 +34,7 @@ function App() {
         <Route path="/UsuarioIndividual" element={< UsuarioIndividual />} />
 
         <Route path="/Usuarios/Create" element={< CreateUsuarios />} />
-        <Route path="/Usuarios/Update:id" element={< UserUpdate />} />
+        <Route path="/ActualizarUsuario/:idusuario" element={< UserUpdate />} />
         <Route path="/Favorites" element={< Favorites />} />
         <Route path="/Tareas" element={< Tareas />} />
 

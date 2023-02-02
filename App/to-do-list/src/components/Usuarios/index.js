@@ -40,9 +40,9 @@ useEffect(()=>{
           <tr>
             <td className='col-md-3' >{el_item.user}</td>
             <td className='col-md-3' >{el_item.description} </td>
-            <td className='col-md-3' >{el_item.id}  </td>
+            <td className='col-md-3' >{el_item._id}  </td>
             <td className='col-md-1' >
-            <Link to={`/Usuarios/Update/${el_item.id}`} >
+            <Link to={`/ActualizarUsuario/${el_item._id}`} >
             <li className='btn btn-primary'>Editar</li>
             </Link> </td>
             <td className='col-md-1' >

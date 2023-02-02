@@ -27,7 +27,7 @@ const Navbarboostrap = () => {
               </Link>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <Link class="dropdown-item" to="/Usuarios/Create">Crear Usuarios</Link>
-                <Link class="dropdown-item" to="/Usuarios/Update">Actualizar Usuario</Link>
+                <Link class="dropdown-item" to="/ActualizarUsuario:id">Actualizar Usuario</Link>
                 <Link class="dropdown-item" to="/Usuarios/Delete">Eliminar Usuarios</Link>
                 <Link class="dropdown-item" to="/UsuarioIndividual">Usuario Individual</Link>
                 <Link class="dropdown-item" to="/Usuarios">Lista de Usuarios</Link>
