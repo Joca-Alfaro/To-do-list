@@ -18,6 +18,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import AccessAlarmsIcon from '@mui/icons-material/AccessAlarms';
+import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
+import FolderIcon from '@mui/icons-material/Folder';
+import StyleIcon from '@mui/icons-material/Style';
 
 import MailIcon from '@mui/icons-material/Mail';
 import { Link } from 'react-router-dom';
@@ -64,6 +67,11 @@ export default function Navbar() {
   const listaTareas = [
     { "Nombre": "Filtros y Etiquetas", "path": '/FiltrosAndEtiquetas' },
     { "Nombre": "Folders", "path": '/Folders' },
+    { "Nombre": "Usuarios ", "path": '/Usuarios' },
+    { "Nombre": "Favoritos ", "path": 'Favorites' },
+    { "Nombre": "Tareas ", "path": '/Tareas' },
+
+
   ]
   return (
     <Box sx={{ display: 'flex' }}>
@@ -109,7 +117,9 @@ export default function Navbar() {
               <ListItemButton>
                 <Link to={text.path}>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+
+                    {index % 2 === 0 ? <StyleIcon /> : <FolderIcon /> }
+
                   </ListItemIcon>
                   <ListItemText primary={text.Nombre} />
                 </Link>
@@ -117,20 +127,20 @@ export default function Navbar() {
             </ListItem>
           ))}
         </List>
-        <List>
+        {/* <List>
           {listaTareas.map((text, index) => (
             <ListItem key={index} disablePadding>
               <ListItemButton>
                 <Link to={text.path}>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <AccessAlarmsIcon />}
+                    {index % 2 === 0 ? <InboxIcon /> : <PeopleOutlineIcon />}
                   </ListItemIcon>
                   <ListItemText primary={text.Nombre} />
                 </Link>
               </ListItemButton>
             </ListItem>
           ))}
-        </List>
+        </List> */}
         <Divider />
       </Drawer>
       <DrawerHeader />
