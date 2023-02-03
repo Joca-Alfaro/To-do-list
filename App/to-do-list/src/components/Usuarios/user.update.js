@@ -40,9 +40,30 @@ function EditarUsuario() {
     password: password,
     description: description
   }
+
+
+//AGREGADO
+
+const Iteradores = () => {
+
+  const [iteradores, Set_Iteradores] = useState([]);
+
+
+  const ConsumirApiBackend  = async () => {
+    const  data = await axios('http://localhost:4000/usuarios')
+    Set_Iteradores(data.data.data)
+  }
+
+useEffect(()=>{
+  ConsumirApiBackend();
+},[])
+ }
+
+
+
 //Peticion Axios
 http://localhost:4000/usuarios/update?id=63d1d13b17dfc6eec85a7bcd
-axios.put(`http://localhost:4000/usuarios/update?id=63d1d13b17dfc6eec85a7bcd`, acutalizarusuario)
+axios.put(`http://localhost:4000/usuarios/update?id=${params.idusuario}`, acutalizarusuario)
 .then(res => {
   console.log(res.data);
   alert(`Usuario Actualizado Exitosamente`)
@@ -51,6 +72,8 @@ axios.put(`http://localhost:4000/usuarios/update?id=63d1d13b17dfc6eec85a7bcd`, a
 }
 
   return (
+
+  
 <div className='container'>
 
  
