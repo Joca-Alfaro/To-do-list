@@ -17,8 +17,7 @@ import  Favorites from "../src/components/Favorites"
 import Tareas from "../src/components/Tareas"
 import Navbarboostrap from "../src/components/navbar/navbarboostrap"
 import UserUpdate from "../src/components/Usuarios/user.update"
-import UsuarioIndividual from "../src/components/Usuarios/usuario.individual"
-
+import UserDelete from "../src/components/Usuarios/user.delete"
 
 function App() {
   return (
@@ -31,8 +30,7 @@ function App() {
         <Route path="/FiltrosAndEtiquetas" element={<Filtros_Etiquetas/>} />
         <Route path="/Folders" element={< Folders />} />
         <Route path="/Usuarios" element={< ListaUsuarios />} />
-        <Route path="/UsuarioIndividual" element={< UsuarioIndividual />} />
-
+        <Route path="/Delete/:idusuario" element={< UserDelete />} />
         <Route path="/Usuarios/Create" element={< CreateUsuarios />} />
         <Route path="/ActualizarUsuario/:idusuario" element={< UserUpdate />} />
         <Route path="/Favorites" element={< Favorites />} />

@@ -10,6 +10,7 @@ function UserUpdate() {
 
 const params = useParams()
 
+const [Data, Set_Data] = useState([]);
 const [user, set_User] = useState('');
 const [password, set_Password] = useState('');
 const [description, set_Description] = useState('');
@@ -42,27 +43,12 @@ function EditarUsuario() {
   }
 
 
-//AGREGADO
 
-const Iteradores = () => {
-
-  const [iteradores, Set_Iteradores] = useState([]);
-
-
-  const ConsumirApiBackend  = async () => {
-    const  data = await axios('http://localhost:4000/usuarios')
-    Set_Iteradores(data.data.data)
-  }
-
-useEffect(()=>{
-  ConsumirApiBackend();
-},[])
- }
 
 
 
 //Peticion Axios
-http://localhost:4000/usuarios/update?id=63d1d13b17dfc6eec85a7bcd
+  //localhost:4000/usuarios/update?id=63d1d13b17dfc6eec85a7bcd
 axios.put(`http://localhost:4000/usuarios/update?id=${params.idusuario}`, acutalizarusuario)
 .then(res => {
   console.log(res.data);
@@ -70,6 +56,9 @@ axios.put(`http://localhost:4000/usuarios/update?id=${params.idusuario}`, acutal
 })
 .then(err => {console.log(err)} )
 }
+
+
+
 
   return (
 
@@ -83,12 +72,14 @@ axios.put(`http://localhost:4000/usuarios/update?id=${params.idusuario}`, acutal
 <h3 className='mt-4'> El Id del usario a modificar es: {params.idusuario} </h3>
 
   </div>
+
    <div className='row'>
     <div className='col-sm-6 offset-3'>
-
+    
    <div className='mb-3'>
     <label htmlFor='nombre' className='form-label'> Nombre </label>
-    <input type="text" className='form-control' value={user}  onChange={(e) =>  {set_User(e.target.value)} } />
+    <input type="text" id="" className='form-control' value={`${user}`}   onChange={(e) =>  {set_User(e.target.value)} } />
+   
       </div>
 
        <div className='mb-3'>

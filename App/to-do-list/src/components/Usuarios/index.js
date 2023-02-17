@@ -46,7 +46,7 @@ useEffect(()=>{
             <li className='btn btn-primary'>Editar</li>
             </Link> </td>
             <td className='col-md-1' >
-            <Link to={`/Usuarios/Delete`} >
+            <Link to={`/Delete/${el_item.id}`} >
             <li className='btn btn-danger'>Borrar</li>
             </Link> </td>
           </tr>
